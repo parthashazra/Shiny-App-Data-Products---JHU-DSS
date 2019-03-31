@@ -1,0 +1,81 @@
+---
+title: 'Final Assignment :: Shiny App'
+author: "Partha Hazra"
+date: "March 31, 2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Purpose and Details
+
+The assignment was built as part of a deliverable for the course Developing Data Products 
+as part of the Coursera Data Science Specialization.This peer assessed assignment has two 
+parts. 
+
+- A. I need to create a Shiny application and deploy it on Rstudio's servers. 
+- B. Second, I shall use Rstudio Presenter to prepare a reproducible pitch 
+presentation about the application.
+
+The app developed for the first part of the assignment demo is 
+avalilable at https://parthashazrads.shinyapps.io/TruChoiceCar/
+
+Source code for ui.R and server.R files are available on the 
+GitHub repo @ https://github.com/parthashazra/Shiny-App-Data-Products---JHU-DSS
+
+## Application Overview
+
+TruChoiceCar site helps user to select correct car for their upcoming trip based on 
+various parameter.
+
+User need to provide your trip detail like distance, price of gasoline, maximum allowed 
+expenditure for gasoline, etc. 
+
+Based on these user feedback, Shiny App calculates internally and recommends cars based on 
+your prefernce criteria ordered by expenditure on gasoline.
+
+The result contains filters selected cars will show in a table on the main content with 
+using the mtcars dataset from [R].
+
+## Sneak peek in mtcars Dataset
+
+```{r echo = FALSE,message=FALSE,warning=FALSE}
+library(datasets)
+library(plotly)
+
+
+print("First 10 entries from mtcars dataset")
+mtcars[1:10,]
+```
+
+## Basic Data Exploration
+
+```{r echo = FALSE,message=FALSE,warning=FALSE}
+par(mfrow = c(2,2))
+
+plot(mtcars$cyl,mtcars$mpg,xlab = "Number of Cylinder",ylab = "MPG Indicator")
+plot(mtcars$hp,mtcars$mpg,xlab = "Horsepower",ylab = "MPG Indicator")
+plot(mtcars$wt,mtcars$mpg,xlab = "Weight of the car",ylab = "MPG Indicator")
+plot(mtcars$disp,mtcars$mpg,xlab = "Displacement Count",ylab = "MPG Indicator")
+```
+
+
+## Basic Data Exploration
+
+For the sake of time for the reviewer, I have restricted data exploration at basic level. 
+We found that MPG is strongly related to number of cyliders, horsepower as well as weight'
+of the car. Displacement also impacts MPG negatively.
+
+Further analysis can explore more such interesting information if we use lm or 
+regression techniques.
+
+## End of Slide
+
+
+
+
+Thank you for visting my page!!!
+
+
